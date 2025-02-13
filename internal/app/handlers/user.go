@@ -36,7 +36,7 @@ func (h *UserHandler) GetAllUsers(c *gin.Context) {
 		return
 	}
 
-	var userResponses []response.CreateUser
+	var userResponses = make([]response.CreateUser, 0)
 	for _, user := range users {
 		userResponses = append(userResponses, response.CreateUser{
 			ID:        user.ID,
